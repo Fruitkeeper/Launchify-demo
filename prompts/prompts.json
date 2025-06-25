@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "prompt": "Explain a go-to-market strategy for an AI SaaS tool.",
+    "reference": "A strong GTM for AI SaaS involves identifying target customer segments, defining value proposition, choosing distribution channels (direct sales, partnerships, self-serve), pricing strategy based on value delivered, building awareness through content marketing and demos, establishing customer success processes, and measuring key metrics like CAC, LTV, and time-to-value."
+  },
+  {
+    "id": 2,
+    "prompt": "What are the key metrics to track for a B2B SaaS product launch?",
+    "reference": "Key B2B SaaS metrics include: Customer Acquisition Cost (CAC), Lifetime Value (LTV), Monthly Recurring Revenue (MRR), churn rate, product-market fit signals (retention curves, NPS), trial-to-paid conversion rate, time-to-value, expansion revenue, and sales velocity metrics like deal size and sales cycle length."
+  },
+  {
+    "id": 3,
+    "prompt": "How do you price a new software product in a competitive market?",
+    "reference": "Pricing strategy should consider: value-based pricing aligned with customer ROI, competitive analysis of existing solutions, cost-plus margins, psychological pricing principles, tiered pricing for different customer segments, freemium vs paid models, usage-based vs subscription models, and regular testing through A/B experiments and customer feedback."
+  },
+  {
+    "id": 4,
+    "prompt": "What channels work best for acquiring enterprise customers?",
+    "reference": "Enterprise customer acquisition channels include: direct sales teams with inside/field sales, partner channels (system integrators, consultants), content marketing (whitepapers, webinars), industry events and conferences, account-based marketing, referral programs, and digital channels like LinkedIn ads targeting decision makers."
+  },
+  {
+    "id": 5,
+    "prompt": "How do you validate product-market fit before scaling marketing?",
+    "reference": "Product-market fit validation includes: achieving strong retention rates (>90% monthly for B2B SaaS), high NPS scores (>50), customers willing to pay premium pricing, organic word-of-mouth growth, low customer acquisition costs relative to LTV, customers using product as intended, and clear customer pain point resolution."
+  },
+  {
+    "id": 6,
+    "prompt": "What's the best approach for international market expansion?",
+    "reference": "International expansion strategy should include: market research and localization assessment, regulatory compliance understanding, local partnership evaluation, pricing strategy adaptation, cultural customization needs, local marketing channels identification, customer support logistics, and phased rollout starting with similar markets."
+  },
+  {
+    "id": 7,
+    "prompt": "How do you build an effective sales funnel for B2B products?",
+    "reference": "B2B sales funnel construction involves: awareness stage content (blogs, SEO), consideration stage resources (whitepapers, demos), decision stage materials (case studies, trials), clear lead qualification criteria (BANT), nurturing sequences for different buyer personas, sales handoff processes, and continuous optimization based on conversion metrics."
+  },
+  {
+    "id": 8,
+    "prompt": "What role does customer success play in GTM strategy?",
+    "reference": "Customer success is crucial for GTM by: reducing churn through proactive engagement, identifying expansion opportunities, generating referrals and case studies, providing product feedback for roadmap, improving onboarding processes, measuring customer health scores, and ultimately improving LTV/CAC ratios for sustainable growth."
+  },
+  {
+    "id": 9,
+    "prompt": "How do you create compelling value propositions for technical products?",
+    "reference": "Technical product value propositions should: focus on business outcomes rather than features, quantify benefits with specific metrics, address technical and business buyer concerns, demonstrate ROI and cost savings, provide proof points through benchmarks, include security and compliance benefits, and be tailored to different stakeholder personas."
+  },
+  {
+    "id": 10,
+    "prompt": "What's the optimal team structure for a product launch?",
+    "reference": "Optimal launch team includes: product manager as launch lead, marketing for positioning and campaigns, sales for channel readiness and training, customer success for onboarding processes, engineering for technical support, legal for compliance, and executive sponsor for decision-making and resource allocation."
+  },
+  {
+    "id": 11,
+    "prompt": "How do you handle competitive positioning in crowded markets?",
+    "reference": "Competitive positioning requires: differentiation based on unique capabilities, identifying uncontested market spaces, focusing on specific customer segments, emphasizing superior customer experience, building category-defining messaging, avoiding direct feature comparisons, and creating switching costs through platform integration."
+  },
+  {
+    "id": 12,
+    "prompt": "What are effective strategies for generating product awareness?",
+    "reference": "Product awareness strategies include: content marketing with SEO optimization, thought leadership through speaking and writing, strategic partnerships and integrations, product demos and free trials, influencer and analyst relations, community building, social media engagement, and public relations campaigns."
+  },
+  {
+    "id": 13,
+    "prompt": "How do you optimize conversion rates in the sales process?",
+    "reference": "Sales conversion optimization involves: qualifying leads effectively, personalized demo experiences, addressing objections proactively, creating urgency through limited-time offers, providing social proof and references, streamlining the buying process, offering flexible terms, and following up consistently with value-added touchpoints."
+  },
+  {
+    "id": 14,
+    "prompt": "What metrics indicate a successful product launch?",
+    "reference": "Launch success metrics include: adoption rate meeting targets, user engagement levels, revenue generation vs forecast, customer satisfaction scores, market share capture, media coverage and brand awareness lift, partner/channel activation, and achievement of key milestones within timeline."
+  },
+  {
+    "id": 15,
+    "prompt": "How do you scale marketing operations efficiently?",
+    "reference": "Marketing operations scaling requires: marketing automation platforms, lead scoring and nurturing systems, performance analytics and attribution, content management workflows, campaign optimization processes, team specialization and training, technology stack integration, and data-driven decision making frameworks."
+  },
+  {
+    "id": 16,
+    "prompt": "What's the role of partnerships in go-to-market strategy?",
+    "reference": "Partnerships enhance GTM through: expanded market reach and credibility, complementary capabilities and integrations, shared marketing costs and efforts, access to partner customer base, technical validation and endorsement, channel partner sales acceleration, and risk mitigation through diversified routes to market."
+  },
+  {
+    "id": 17,
+    "prompt": "How do you adapt GTM strategy based on customer feedback?",
+    "reference": "GTM adaptation from feedback involves: regular customer interview programs, feedback analysis and categorization, product roadmap adjustments, messaging refinement, pricing model optimization, channel strategy modifications, customer success process improvements, and continuous testing of new approaches."
+  },
+  {
+    "id": 18,
+    "prompt": "What are common GTM mistakes to avoid for startups?",
+    "reference": "Common GTM mistakes include: targeting too broad a market, unclear value proposition, insufficient market research, premature scaling, neglecting customer success, poor sales/marketing alignment, ignoring competitive threats, inadequate pricing strategy, weak messaging consistency, and lack of metrics tracking."
+  },
+  {
+    "id": 19,
+    "prompt": "How do you build thought leadership in B2B marketing?",
+    "reference": "B2B thought leadership requires: consistent high-quality content creation, industry event speaking opportunities, original research and data insights, engaging with industry conversations, building personal brand alongside company brand, leveraging multiple content formats, fostering community discussions, and demonstrating expertise through problem-solving."
+  },
+  {
+    "id": 20,
+    "prompt": "What's the importance of customer onboarding in GTM?",
+    "reference": "Customer onboarding is critical for GTM success by: reducing time-to-value and improving activation, decreasing early churn rates, increasing customer lifetime value, generating expansion opportunities, creating positive references and case studies, reducing support burden, and establishing foundation for long-term customer relationships."
+  },
+  {
+    "id": 21,
+    "prompt": "How do you measure and improve customer acquisition cost?",
+    "reference": "CAC optimization involves: tracking acquisition costs by channel and campaign, improving conversion rates at each funnel stage, enhancing lead quality through better targeting, optimizing sales process efficiency, leveraging customer referrals, improving retention to increase LTV, and testing new acquisition channels with lower costs."
+  },
+  {
+    "id": 22,
+    "prompt": "What role does data play in modern GTM strategies?",
+    "reference": "Data drives GTM through: customer behavior analytics for personalization, predictive modeling for lead scoring, attribution analysis for channel optimization, A/B testing for messaging and pricing, cohort analysis for retention insights, competitive intelligence gathering, and real-time performance monitoring for agile adjustments."
+  },
+  {
+    "id": 23,
+    "prompt": "How do you create urgency without being pushy in B2B sales?",
+    "reference": "Creating authentic urgency involves: highlighting business impact of delayed decisions, sharing relevant industry trends and deadlines, offering limited-time value adds rather than discounts, demonstrating competitive risks of inaction, providing implementation timeline benefits, sharing capacity constraints honestly, and focusing on customer success outcomes."
+  },
+  {
+    "id": 24,
+    "prompt": "What are effective strategies for upselling and cross-selling?",
+    "reference": "Upselling/cross-selling strategies include: analyzing customer usage patterns and needs, timing offers based on customer success milestones, providing relevant complementary solutions, offering trial periods for additional features, creating bundled pricing incentives, training customer success teams on expansion, and leveraging customer health scores for targeting."
+  },
+  {
+    "id": 25,
+    "prompt": "How do you maintain competitive advantage in rapidly evolving markets?",
+    "reference": "Maintaining competitive advantage requires: continuous innovation and R&D investment, strong customer relationships and switching costs, agile response to market changes, building network effects and platform value, developing proprietary data and insights, fostering company culture and talent, and strategic partnerships for capability expansion."
+  }
+] 
