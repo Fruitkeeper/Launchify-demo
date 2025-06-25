@@ -1,0 +1,196 @@
+# ==============================================================================
+# Meta-Agent LLM Router - .gitignore
+# ==============================================================================
+
+# 🔐 SENSITIVE FILES - NEVER COMMIT THESE!
+# ==============================================================================
+.env                    # API keys and secrets
+.env.local
+.env.*.local
+*.key
+secrets/
+credentials/
+
+# 🐍 PYTHON ENVIRONMENT
+# ==============================================================================
+venv/                   # Virtual environment
+env/
+ENV/
+.venv/
+.ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 📊 DATABASE & GENERATED FILES
+# ==============================================================================
+data.db                 # SQLite database with all run results
+*.db
+*.sqlite
+*.sqlite3
+summary_*.csv           # Generated summary reports
+learning_data.csv       # Exported learning data
+logs/
+*.log
+
+# 💻 OPERATING SYSTEM
+# ==============================================================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# 🛠️ IDE & EDITORS
+# ==============================================================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# 🐋 DOCKER & DEPLOYMENT
+# ==============================================================================
+.dockerignore
+docker-compose.override.yml
+.env.docker
+
+# 📦 PACKAGE MANAGERS
+# ==============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🧪 TESTING & COVERAGE
+# ==============================================================================
+.coverage
+.pytest_cache/
+.cache
+.tox/
+htmlcov/
+.coverage.*
+
+# 📝 TEMPORARY FILES
+# ==============================================================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*.orig
+
+# 🚀 DEPLOYMENT & CI/CD
+# ==============================================================================
+.github/workflows/secrets.yml
+.travis.yml
+.circleci/
+deployment/
+
+# 📊 JUPYTER NOTEBOOKS
+# ==============================================================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# 🔧 CONFIGURATION
+# ==============================================================================
+config/local.yaml
+config/production.yaml
+config/development.yaml
+local_settings.py
+
+# 📈 ANALYTICS & MONITORING
+# ==============================================================================
+.monitoring/
+analytics/
+metrics/
+
+# 🎯 PROJECT-SPECIFIC
+# ==============================================================================
+# Custom model weights or large files
+models/weights/
+*.pkl
+*.joblib
+*.model
+
+# API response caches
+cache/
+.cache/
+
+# Custom analysis files
+analysis/
+experiments/
+notebooks/
+
+# ==============================================================================
+# KEEP THESE FILES (explicitly track important files)
+# ==============================================================================
+# !.env.example        # Keep the template
+# !README.md            # Keep documentation
+# !requirements.txt     # Keep dependencies
+# !Dockerfile          # Keep containerization
+# !Makefile            # Keep automation
