@@ -10,6 +10,7 @@
 *.key
 secrets/
 credentials/
+.env.example
 
 # 🐍 PYTHON ENVIRONMENT
 # ==============================================================================
