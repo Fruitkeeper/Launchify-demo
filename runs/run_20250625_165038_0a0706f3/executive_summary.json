@@ -1,0 +1,88 @@
+{
+  "run_metadata": {
+    "run_id": "run_20250625_165038_0a0706f3",
+    "timestamp": "2025-06-25T14:50:38Z",
+    "duration_minutes": 65,
+    "status": "completed",
+    "total_prompts": 25,
+    "success_rate": 1.0
+  },
+  "performance_summary": {
+    "total_cost": 0.1475,
+    "average_cost_per_prompt": 0.0059,
+    "average_latency_seconds": 8.2,
+    "average_critic_score": 8.0,
+    "total_tokens": 11847
+  },
+  "model_distribution": {
+    "claude": {
+      "prompts_handled": 23,
+      "percentage": 92.0,
+      "average_latency": 7.8,
+      "average_cost": 0.0049,
+      "average_score": 8.0,
+      "total_tokens": 8756
+    },
+    "gpt-4o": {
+      "prompts_handled": 1,
+      "percentage": 4.0,
+      "average_latency": 17.7,
+      "average_cost": 0.0119,
+      "average_score": 8.0,
+      "total_tokens": 821
+    },
+    "mistral": {
+      "prompts_handled": 1,
+      "percentage": 4.0,
+      "average_latency": 7.9,
+      "average_cost": 0.0046,
+      "average_score": 8.0,
+      "total_tokens": 798
+    }
+  },
+  "quality_metrics": {
+    "excellent_responses": 0,
+    "very_good_responses": 25,
+    "good_responses": 0,
+    "poor_responses": 0,
+    "quality_distribution": {
+      "9-10": 0,
+      "8-9": 25,
+      "7-8": 0,
+      "6-7": 0,
+      "below_6": 0
+    }
+  },
+  "routing_insights": {
+    "primary_model": "claude",
+    "routing_efficiency": 0.92,
+    "cost_optimization": "active",
+    "fallback_usage": 0,
+    "learning_active": true
+  },
+  "key_achievements": [
+    "100% success rate across all prompts",
+    "Consistent high-quality responses (8.0/10 average)",
+    "Cost-efficient operation under $0.15 total",
+    "Smart routing with adaptive model selection",
+    "Zero failures or system errors"
+  ],
+  "recommendations": [
+    "Continue current Claude-focused strategy",
+    "Monitor model diversity for continuous learning",
+    "Reserve GPT-4o for complex, high-value prompts",
+    "System ready for production deployment"
+  ],
+  "technical_config": {
+    "routing_algorithm": "historical_performance_weighted",
+    "fallback_enabled": true,
+    "quality_threshold": 7.0,
+    "cost_optimization": true,
+    "environment": {
+      "python_version": "3.13",
+      "backend": "FastAPI",
+      "frontend": "React",
+      "database": "SQLite"
+    }
+  }
+} 
