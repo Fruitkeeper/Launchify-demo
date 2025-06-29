@@ -75,6 +75,7 @@ db/db.py                 → SQLite storage and historical analysis
 run/run.py               → Main orchestration pipeline
 run/summary.py           → Performance reporting and CSV export
 ```
+![Graph](images/graph.png)
 
 ## 🎯 Design Decisions
 
