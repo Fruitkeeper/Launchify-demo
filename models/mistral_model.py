@@ -47,6 +47,18 @@ class MistralModel:
             # Extract response data
             answer_text = response_data['choices'][0]['message']['content']
             
+            # Validate response
+            if not answer_text or answer_text.strip() == "":
+                return {
+                    "answer_text": "Error generating response: Empty response from Mistral",
+                    "latency_ms": latency_ms,
+                    "tokens": 0,
+                    "estimated_cost": 0.0,
+                    "input_tokens": 0,
+                    "output_tokens": 0,
+                    "error_type": "empty_response"
+                }
+            
             # Estimate token usage (Mistral doesn't always return usage data)
             if 'usage' in response_data:
                 input_tokens = response_data['usage']['prompt_tokens']
@@ -72,12 +84,36 @@ class MistralModel:
                 "output_tokens": output_tokens
             }
             
-        except Exception as e:
+        except requests.exceptions.RequestException as e:
+            error_type = "connection_error"
+            if hasattr(e, 'response') and e.response is not None:
+                if e.response.status_code == 401:
+                    error_type = "auth_error"
+                elif e.response.status_code == 429:
+                    error_type = "rate_limit"
+                elif e.response.status_code >= 500:
+                    error_type = "server_error"
+            
             return {
                 "answer_text": f"Error generating response: {str(e)}",
                 "latency_ms": (time.time() - start_time) * 1000,
                 "tokens": 0,
                 "estimated_cost": 0.0,
                 "input_tokens": 0,
-                "output_tokens": 0
+                "output_tokens": 0,
+                "error_type": error_type
+            }
+        except Exception as e:
+            error_type = "unknown_error"
+            if "timeout" in str(e).lower():
+                error_type = "timeout"
+            
+            return {
+                "answer_text": f"Error generating response: {str(e)}",
+                "latency_ms": (time.time() - start_time) * 1000,
+                "tokens": 0,
+                "estimated_cost": 0.0,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "error_type": error_type
             } 

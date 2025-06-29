@@ -2,7 +2,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from typing import Dict, List
+from typing import Dict, List, Tuple
 from models.openai_model import OpenAIModel
 from models.anthropic_model import AnthropicModel  
 from models.mistral_model import MistralModel
@@ -19,10 +19,10 @@ class LLMRouter:
         self.scorer = Scorer()
         self.db = DatabaseManager()
     
-    def get_best_model(self, prompt: str) -> str:
+    def get_ranked_models(self, prompt: str) -> List[Tuple[str, float]]:
         """
-        Determine the best model for a given prompt based on historical performance
-        Returns the model name to use
+        Determine the ranked list of models for a given prompt based on historical performance
+        Returns a list of (model_name, score) tuples sorted by score (highest first)
         """
         model_scores = {}
         
@@ -42,11 +42,12 @@ class LLMRouter:
                 'performance': performance
             }
         
-        # Select model with highest score
-        best_model = max(model_scores.keys(), key=lambda k: model_scores[k]['score'])
+        # Sort models by score (highest first)
+        ranked_models = sorted(model_scores.keys(), key=lambda k: model_scores[k]['score'], reverse=True)
         
         print(f"Model scores for prompt selection:")
-        for model, data in model_scores.items():
+        for model in ranked_models:
+            data = model_scores[model]
             perf = data['performance']
             print(f"  {model}: score={data['score']:.3f} "
                   f"(quality={perf['avg_score']:.1f}, "
@@ -54,25 +55,71 @@ class LLMRouter:
                   f"cost=${perf['avg_cost']:.4f}, "
                   f"runs={perf['total_runs']})")
         
+        return [(model, model_scores[model]['score']) for model in ranked_models]
+    
+    def get_best_model(self, prompt: str) -> str:
+        """
+        Determine the best model for a given prompt based on historical performance
+        Returns the model name to use
+        """
+        ranked_models = self.get_ranked_models(prompt)
+        best_model = ranked_models[0][0]
         print(f"Selected model: {best_model}")
         return best_model
     
+    def _is_error_response(self, response: Dict) -> bool:
+        """Check if a response indicates an error"""
+        return (
+            response.get('answer_text', '').startswith('Error generating response:') or
+            response.get('tokens', 0) == 0 or
+            response.get('estimated_cost', 0) == 0.0
+        )
+    
     def generate_response(self, prompt: str, model_name: str = None) -> Dict:
         """
-        Generate response using specified model or best model
+        Generate response using specified model or best model with fallback to second-best
         """
-        if model_name is None:
-            model_name = self.get_best_model(prompt)
+        if model_name is not None:
+            # If a specific model is requested, try only that model
+            if model_name not in self.models:
+                raise ValueError(f"Unknown model: {model_name}")
+            
+            model = self.models[model_name]
+            response = model.generate_response(prompt)
+            response['model'] = model_name
+            return response
         
-        if model_name not in self.models:
-            raise ValueError(f"Unknown model: {model_name}")
+        # Get ranked list of models
+        ranked_models = self.get_ranked_models(prompt)
         
-        model = self.models[model_name]
-        response = model.generate_response(prompt)
-        response['model'] = model_name
+        # Try models in order of preference
+        for i, (model_name, score) in enumerate(ranked_models):
+            print(f"Trying model {i+1}/{len(ranked_models)}: {model_name}")
+            
+            model = self.models[model_name]
+            response = model.generate_response(prompt)
+            response['model'] = model_name
+            
+            # Check if response is valid (not an error)
+            if not self._is_error_response(response):
+                if i > 0:  # If we used a fallback model
+                    print(f"✓ Successfully used fallback model: {model_name}")
+                else:
+                    print(f"✓ Successfully used primary model: {model_name}")
+                return response
+            else:
+                print(f"✗ Model {model_name} failed: {response.get('answer_text', 'Unknown error')}")
+                
+                # If this was the last model, return the error response
+                if i == len(ranked_models) - 1:
+                    print("⚠ All models failed, returning last error response")
+                    return response
+                else:
+                    print(f"→ Falling back to next model...")
         
+        # This should never be reached, but just in case
         return response
-    
+
     def get_available_models(self) -> List[str]:
         """Get list of available model names"""
         return list(self.models.keys())
