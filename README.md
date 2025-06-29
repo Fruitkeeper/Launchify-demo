@@ -76,7 +76,7 @@ run/run.py               → Main orchestration pipeline
 run/summary.py           → Performance reporting and CSV export
 ```
 ![Graph](images/graph.png)
-![Graph](images/graph2.png)
+![Graph](images/routing.png)
 ## 🎯 Design Decisions
 
 **Model Selection**: Chose GPT-4o (latest), Claude 3.5 Sonnet (reasoning), Mistral Large (cost-effective)
